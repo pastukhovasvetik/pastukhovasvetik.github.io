@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./index_files/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="center">
+            
+            <a class="yes" id="link" >1</a>
+        </div>
+    </div>
+    <a href="https://policies.google.com/privacy?hl=ru" class="policy">Privacy policy</a>
+   
+     <script type="text/javascript">
+        let utm = window.location.href.split('?').pop(); //получаем utm
+        
+    
+	$.get("http://ipinfo.io", function(response) {
+    if(response.country == "RO") {
+        
+		$("#link").html("să vegheze ...");
+		document.getElementById('link').onclick = function() { //по клику на кнопку
+        window.location = 'http://factor30.fair-sale.com/ro/pre/1/?track_url=URL-A9275-25455'; //переправляем пользователя на новый адрес		
+    }}
+    else if(response.country == "IT") {
+	
+        $("#link").html("ulteriormente ...");
+		document.getElementById('link').onclick = function() { //по клику на кнопку
+        window.location = 'http://factor30.fair-sale.com/pre/2/?track_url=URL-96849-A1C37'; //переправляем пользователя на новый адрес
+        
+	}}
+	
+	else if(response.country == "BG") {
+	
+        $("#link").html("още ...");
+		document.getElementById('link').onclick = function() { //по клику на кнопку
+        window.location = 'http://elevenomolozes.ru/offers/prelends/?'+utm; //переправляем пользователя на новый адрес
+        
+	}}
+	
+	else if(response.country == "ES") {
+	
+        $("#link").html("MIRA LOS... ...");
+		document.getElementById('link').onclick = function() { //по клику на кнопку
+        window.location = 'https://twelveomolozes.ru/offers/prelends/?'+utm; //переправляем пользователя на новый адрес
+	}}
+	
+    else {
+        $("#link").html("Hello!");
+    }
+}, "jsonp");
+    </script>  
+</body></html>
